@@ -324,8 +324,10 @@ class ImagesFromFolder(data.Dataset):
     self.crop_size = args.crop_size
     self.render_size = args.inference_size
     self.replicates = replicates
+    if (args.backward):
+        print('BACKWARD!')
 
-    images = sorted( glob( join(root, '*.' + iext) ) )
+    images = sorted( glob( join(root, '*.' + iext) ) , reverse=args.backward)
     self.image_list = []
     for i in range(len(images)-1):
         im1 = images[i]

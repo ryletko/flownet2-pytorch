@@ -80,6 +80,8 @@ if __name__ == '__main__':
                                     skip_params=['is_cropped'],
                                     parameter_defaults={'root': './MPI-Sintel/flow/training',
                                                         'replicates': 1})
+                                                        
+    parser.add_argument('--backward', action='store_true', help="barckward optical calc")
 
     main_dir = os.path.dirname(os.path.realpath(__file__))
     os.chdir(main_dir)
